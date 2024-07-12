@@ -1,5 +1,9 @@
-from classes import Category
+from classes.class_category import Category
 
 
 def test_init_category():
-    assert Category.__init__(name=str, description=str, goods=list) == []
+    assert Category.__init__('self', 'Телевизоры', 'Современный телевизор, '
+                                               'который позволяет наслаждаться просмотром, станет вашим другом и '
+                                               'помощником', '55" QLED 4K') == ['Телевизоры', 'Современный телевизор, '
+                                               'который позволяет наслаждаться просмотром, станет вашим другом и '
+                                               'помощником', '55" QLED 4K']
