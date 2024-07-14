@@ -14,6 +14,5 @@ class Category:
         Category.total_unique_products += len(set(goods))
 
     def __str__(self):
-        return f"Наименование категории:{self.name} Описание:{self.description} Товары:{self.goods} "
-
-    __repr__ = __str__
+        return (f"{str(Category.total_categories)}.Наименование категории:{self.name} Описание:{self.description} "
+                f"Товары:{self.goods} ")
