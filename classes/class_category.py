@@ -24,8 +24,8 @@ class Category:
         Category.product_count += 1
 
     @property
-    def get_product(self):
+    def products(self):
         return [
-            f"Название продукта : {product.name}, цена : {product.price} рублей, Остаток: {product.quantity} штук."
+            f"Название продукта, {product.name}, {product.price} руб. Остаток: {product.quantity} шт."
             for product in self.__goods
         ]
