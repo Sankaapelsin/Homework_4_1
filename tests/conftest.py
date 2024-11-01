@@ -1,7 +1,7 @@
 import pytest
 
-from classes.class_category import Category
-from classes.class_product import Product
+from classes.category import Category
+from classes.product import Product
 
 
 @pytest.fixture
@@ -29,7 +29,7 @@ def third_product():
     return Product(
         name="Xiaomi Redmi Note 11",
         description="1024GB, Синий",
-        price=-31000.0,
+        price=31000.0,
         quantity=34,
     )
 
@@ -39,7 +39,7 @@ def first_category():
     return Category(
         name="Smartphone",
         description="The best quality and price",
-        goods=[
+        products=[
             Product(
                 name="Samsung Galaxy C23 Ultra",
                 description="256B, Серый цвет, 200MP камера",
@@ -67,7 +67,7 @@ def second_category():
     return Category(
         name="Category number two",
         description="Description of the category number two",
-        goods=[
+        products=[
             Product(
                 name="Product",
                 description="Description of the product",
@@ -95,6 +95,6 @@ def product_dict():
     return {
         "name": "Microwave",
         "description": "Description of the product Microwave",
-        "price": -2005.0,
+        "price": 2005.0,
         "quantity": 20,
     }
