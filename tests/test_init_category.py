@@ -7,9 +7,12 @@ def test_init_category(first_category, second_category):
     assert second_category.description == 'Description of the category number two'
 
 
-def test_total_categories_and_products(first_category, second_category):
+def test_total_categories_and_products(first_category):
     assert first_category.total_categories == 4
-    assert second_category.total_categories == 4
+
+
+def test_get_total_items(first_category):
+    assert first_category.get_total_items() == 47
 
 
 def test_get_product(first_category):
@@ -26,5 +29,5 @@ def test_get_product(first_category):
 
 
 def test_str(first_category, second_category):
-    assert str(first_category) == 'Smartphone, количество продуктов: 3 шт.'
-    assert str(second_category) == 'Category number two, количество продуктов: 3 шт.'
+    assert str(first_category) == 'Smartphone, количество продуктов: 47 шт.'
+    assert str(second_category) == 'Category number two, количество продуктов: 76 шт.'
