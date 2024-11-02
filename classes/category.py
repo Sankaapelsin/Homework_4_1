@@ -1,4 +1,5 @@
-from classes.product import  Product
+# from classes.product import Product
+
 
 class Category:
     name: str
@@ -36,11 +37,10 @@ class Category:
         total_items = sum(product.quantity for product in self.__products)
         return total_items
 
-
-product1 = Product("Кофе", 80, 15, 10)
-product2 = Product("Чай", 60, 10, 22)
-product3 = Product("Water", 60, 10, 5)
-category = Category("Напитки", 5,  [product1, product2, product3])
+# product1 = Product("Кофе", 80, 15, 10)
+# product2 = Product("Чай", 60, 10, 22)
+# product3 = Product("Water", 60, 10, 5)
+# category = Category("Напитки", 5, [product1, product2, product3])
 
 # print(product1)  # Вывод: Кофе, 80 руб. Остаток: 10 шт.
-print(repr(category))  # Вывод: Напитки, количество продуктов: 37 шт.
+# print(repr(category))  # Вывод: Напитки, количество продуктов: 37 шт.
