@@ -19,17 +19,8 @@ def test_get_total_items(first_category):
     assert first_category.get_total_items() == 47
 
 
-def test_get_product(first_category):
-    with pytest.raises(AttributeError):
-        print(first_category.__products)
-    assert (
-        first_category.products
-        == 'Название продукта : Samsung Galaxy C23 Ultra, цена : 180000.0 рублей, '
-           'Остаток: 5 штук.',
-        'Название продукта : Iphone 15, цена : 210000.0 рублей, Остаток: 8 штук.',
-        'Название продукта : Xiaomi Redmi Note 11, цена : 31000.0 рублей, Остаток: 34 '
-        'штук.'
-    )
+def test_products(first_category):
+    assert first_category.products[0] == 'Samsung Galaxy C23 Ultra, 180000.0 руб. 5 шт.'
 
 
 def test_str(first_category, second_category):

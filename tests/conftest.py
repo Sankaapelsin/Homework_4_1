@@ -152,4 +152,3 @@ def lawn_grass_for_adding():
 @pytest.fixture
 def gray_for_adding():
     return Gray()
-

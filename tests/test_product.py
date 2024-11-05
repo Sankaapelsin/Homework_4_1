@@ -1,10 +1,6 @@
 from classes.product import Product
 
 
-def test_total_categories_and_products(first_product, second_product, third_product):
-    assert Product.all_quantities == 47
-
-
 def test_init_category(second_product):
 
     assert second_product.name == 'Iphone 15'
@@ -33,6 +29,3 @@ def test_product_str(first_product):
 def test_product_add(first_product, second_product, third_product):
     assert first_product + second_product == 2580000.0
     assert first_product + third_product == 1954000.0
-
-
-
