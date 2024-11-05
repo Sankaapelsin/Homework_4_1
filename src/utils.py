@@ -1,27 +1,31 @@
 from classes.category import Category
 from classes.product import Product
 import json
+import os
 
 
-def load():
-    with open('data/products.json', 'r', encoding='utf-8') as file:
+def load(path: str):
+    """Конвертирует файл json в словарь"""
+    full_path = os.path.abspath(path)
+    with open(full_path, "r", encoding="UTF-8") as file:
         data = json.load(file)
-        return data
+    return data
 
 
 def func():
-    data = load()
-    for category_data in data:
-        category_name = category_data['name']
-        category_description = category_data['description']
-        category_products = []
-        for product_data in category_data['products']:
-            product = Product(product_data['name'], product_data['description'], product_data['price'],
-                              product_data['quantity'])
-            category_products.append(product.name)
-            category_products.append(product.description)
-            category_products.append(product.price)
-            category_products.append(product.quantity)
-        category = Category(category_name, category_description, category_products)
-        print(category)
+    """Преобразует данные из словаря в объекты класса"""
+    data = load("..//data/products.json")
+    categories = []
+    for category in data:
+        products = []
+        for product in category["products"]:
+            products.append(Product(**product))
+            name = category["name"]
+            description = category["description"]
+            category_instance = Category(name, description, products)
+            categories.append(category_instance)
+        return categories
 
+
+result = func()
+print(result)

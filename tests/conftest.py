@@ -2,6 +2,28 @@ import pytest
 
 from classes.category import Category
 from classes.product import Product
+from classes.lawn_grass import LawnGrass
+from classes.smartphone import Smartphone
+
+
+class Gray:
+    pass
+
+
+@pytest.fixture
+def repr_category():
+    return Category(
+        name="Smartphone",
+        description="The best",
+        products=[
+            Product(
+                name="Samsung",
+                description="256B",
+                price=180000.0,
+                quantity=5,
+            )
+        ]
+    )
 
 
 @pytest.fixture
@@ -98,3 +120,36 @@ def product_dict():
         "price": 2005.0,
         "quantity": 20,
     }
+
+
+@pytest.fixture
+def smartphone_for_adding():
+    return Smartphone(
+        "Смартфон 1",
+        "Description of the product",
+        500.00,
+        10,
+        "perfect",
+        "RedOne",
+        512,
+        "red",
+        )
+
+
+@pytest.fixture
+def lawn_grass_for_adding():
+    return LawnGrass(
+            name="Газонная трава",
+            description="Description of the product number two",
+            price=1000.00,
+            quantity=10,
+            country="China",
+            germination_period=12,
+            color="red",
+        )
+
+
+@pytest.fixture
+def gray_for_adding():
+    return Gray()
+

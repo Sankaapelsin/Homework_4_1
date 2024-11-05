@@ -1,5 +1,4 @@
 from classes.product import Product
-import pytest
 
 
 def test_total_categories_and_products(first_product, second_product, third_product):
