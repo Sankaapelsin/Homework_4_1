@@ -1,8 +1,9 @@
 from classes.smartphone import Smartphone
 from classes.lawn_grass import LawnGrass
+from classes.base import Base
 
 
-class Category:
+class Category(Base):
     name: str
     description: str
     products: list

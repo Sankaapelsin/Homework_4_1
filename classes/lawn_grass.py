@@ -9,6 +9,6 @@ class LawnGrass(Product):
         self.germination_period = germination_period
         self.color = color
 
-    def __repr__(self):
+    def __str__(self):
         return (f"{self.__class__.__name__}('{self.name}', '{self.description}', {self.price}, {self.quantity},"
                 f" '{self.country}', '{self.germination_period}', '{self.color}')")

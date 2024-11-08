@@ -139,13 +139,13 @@ def smartphone_for_adding():
 @pytest.fixture
 def lawn_grass_for_adding():
     return LawnGrass(
-            name="Газонная трава",
-            description="Description of the product number two",
-            price=1000.00,
-            quantity=10,
-            country="China",
-            germination_period=12,
-            color="red",
+        "Газонная трава",
+        "Description of the product",
+        1000.00,
+        10,
+        "China",
+        12,
+        "red",
         )
 
 

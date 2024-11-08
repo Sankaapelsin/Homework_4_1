@@ -10,6 +10,6 @@ class Smartphone(Product):
         self.memory = memory
         self.color = color
 
-    def __repr__(self):
+    def __str__(self):
         return (f"{self.__class__.__name__}('{self.name}', '{self.description}', {self.price}, {self.quantity},"
                 f" '{self.efficiency}', '{self.model}', {self.memory}, '{self.color}')")

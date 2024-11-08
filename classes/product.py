@@ -1,4 +1,8 @@
-class Product:
+from classes.baseproduct import BaseProduct
+from classes.mixininfo import MixinInfo
+
+
+class Product(BaseProduct, MixinInfo):
     name: str
     description: str
     price: int
@@ -12,6 +16,7 @@ class Product:
         self.__price = price
         self.quantity = quantity
         Product.all_quantities += self.quantity
+        super().__init__()
 
     def __repr__(self):
         return f"{self.__class__.__name__}('{self.name}', '{self.description}', {self.price}, {self.quantity})"
@@ -38,23 +43,8 @@ class Product:
         return self.__price
 
     @price.setter
-    def price(self, new_price):
-        if new_price <= 0:
+    def price(self, value):
+        if value <= 0:
             print("Цена не должна быть нулевая или отрицательная")
-        elif new_price < self.__price:
-            response = input("Вы уверены, что хотите понизить цену? (y/n): ")
-            if response.lower() == 'y':
-                self.__price = new_price
-            else:
-                print("Изменение цены отменено.")
         else:
-            self.__price = new_price
-
-
-# phone1 = Smartphone("Смартфон 1", 56, 500, 30, "perfect", "RedOne","512","red")
-# phone2 = Smartphone("Смартфон 2", 56, 1000, 20, "bad", "XiaomiS4","256","black")
-# grass1 = LawnGrass("Газонная трава", 56, 1000, 10, "China", "12","red")
-
-# print(phone1 + phone2)
-
-# print(phone1 + grass1)
+            self.__price = value
