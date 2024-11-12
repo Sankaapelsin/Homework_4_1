@@ -23,6 +23,11 @@ def test_products(first_category):
     assert first_category.products[0] == 'Samsung Galaxy C23 Ultra, 180000.0 руб. 5 шт.'
 
 
+def test_avg_price(empty_product, second_category):
+    assert empty_product.avg_price() == 0
+    assert round(second_category.avg_price(), 2) == 2902.64
+
+
 def test_str(first_category, second_category):
     assert str(first_category) == 'Smartphone, количество продуктов: 47 шт.'
     assert str(second_category) == 'Category number two, количество продуктов: 76 шт.'

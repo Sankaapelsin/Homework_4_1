@@ -1,4 +1,5 @@
 from classes.product import Product
+import pytest
 
 
 def test_init_category(second_product):
@@ -34,3 +35,8 @@ def test_product_str(first_product):
 def test_product_add(first_product, second_product, third_product):
     assert first_product + second_product == 2580000.0
     assert first_product + third_product == 1954000.0
+
+
+def test_product_add_error():
+    with pytest.raises(ValueError):
+        Product("cucumber", "cucumber from Azerbaijan", 100, 0)

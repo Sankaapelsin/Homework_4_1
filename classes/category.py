@@ -41,3 +41,11 @@ class Category(Base):
     def get_total_items(self):
         total_items = sum(product.quantity for product in self.__products)
         return total_items
+
+    def avg_price(self):
+        try:
+            return sum(product.price for product in self.__products) / len(
+                self.__products
+            )
+        except ZeroDivisionError:
+            return 0
