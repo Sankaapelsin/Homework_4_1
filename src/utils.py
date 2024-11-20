@@ -1,5 +1,5 @@
-from classes.class_category import Category
-from classes.class_product import Product
+from classes.category import Category
+from classes.product import Product
 import json
 
 
@@ -24,5 +24,4 @@ def func():
             category_products.append(product.quantity)
         category = Category(category_name, category_description, category_products)
         print(category)
-    print(f"Количество категорий：{Category.total_categories}")
-    print(f"Количество уникальных товаров：{Category.total_unique_products}")
+
